@@ -1,17 +1,12 @@
 import os
 from pytube import YouTube
 import subprocess
-
+import argparse
 def replace_special_chars(string, replacement=''):
-    # 需要替换的特殊字符列表
     special_chars = ['\\', '/', ':', '*', '?', '"', '<', '>', '|','【','】',' ']
-    
-    # 循环遍历特殊字符列表,并将字符串中的每个特殊字符替换为提供的替换字符
     for char in special_chars:
         string = string.replace(char, replacement)
-    
     return string
-
 
 def download_video(url, output_path=None, quality='highest'):
     try:
@@ -56,18 +51,21 @@ def extract_english_subtitles(source_path, output_path):
     print(error.decode())       
     
 if __name__ == "__main__":
-    video_info = download_video(input("请输入YouTube视频URL:"), output_path=input("请输入输出目录(留空表示当前目录):"))
+    parser = argparse.ArgumentParser(description='下载 YouTube 视频并提取字幕')
+    parser.add_argument('url', nargs='?', help='要下载的 YouTube 视频的 URL')
+    parser.add_argument('--output_path', help='保存下载的视频和字幕的路径', default='.')
+    args = parser.parse_args()
+    if args.url is None:
+        args.url = input('输入 YouTube 视频 URL:')
+    video_info = download_video(args.url, output_path=None)
     if video_info is None:
         print("视频下载失败.")
     else:
-        source_path = (video_info['title'] + '.mp4')
-        output_path = (video_info['title'] + '.srt')
+        source_path = f"{video_info['title']}.mp4"
+        output_path = f"{video_info['title']}.srt"
         print(f"{source_path}\n{output_path}")
-
         extract_english_subtitles(source_path, output_path)
         print('--------------------------------------------------')
-
-        # 将字幕添加到视频中
-        video_with_subtitles_path = (video_info['title'] + '_new.mp4')
+        video_with_subtitles_path = f"{video_info['title']}_new.mp4"
         add_subtitles(source_path, output_path, video_with_subtitles_path)
         print(f"带字幕的视频已保存至{video_with_subtitles_path}")
