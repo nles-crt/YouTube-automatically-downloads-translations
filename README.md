@@ -27,7 +27,7 @@ YouTube automatically downloads translations input YouTube url
 1. 下载 YouTube 视频
 
    ````
-   python download_video.py <video_url>
+   python YouTube.py <video_url>
    ````
 
    其中 `<video_url>` 是要下载的 YouTube 视频的 URL。
