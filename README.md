@@ -16,7 +16,7 @@ YouTube automatically downloads translations input YouTube url
 
   ````
   pip install pytube
-  ```
+  
 
 - `FFmpeg`: 用于提取视频文件中的音频。可从官网下载安装：[https://ffmpeg.org/download.html](https://ffmpeg.org/download.html)
 
@@ -24,7 +24,6 @@ YouTube automatically downloads translations input YouTube url
 
   ````
   pip install autosub3
-  ```
 
 ## 使用说明
 
@@ -32,7 +31,7 @@ YouTube automatically downloads translations input YouTube url
 
    ````
    python download_video.py <video_url>
-   ```
+   
 
    其中 `<video_url>` 是要下载的 YouTube 视频的 URL。
 
@@ -40,7 +39,7 @@ YouTube automatically downloads translations input YouTube url
 
    ````
    python extract_subtitles.py <video_file>
-   ```
+   
 
    其中 `<video_file>` 是要提取字幕的视频文件路径。
 
