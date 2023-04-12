@@ -1,6 +1,4 @@
-# YouTube-automatically-downloads-translations
-YouTube automatically downloads translations input YouTube url
-以下是一个要求够花里胡哨，同时详细说明如何安装 Python 3、PyTube、FFmpeg 和 AutoSub 的 README.md 文件示例：
+#YouTube-automatically-downloads-translations
 
 # 视频字幕提取器
 
