@@ -47,4 +47,4 @@ YouTube automatically downloads translations input YouTube url
 ## 作者
 
 - 作者：李祖明
-- 邮箱 daojin110@outlook.com
+- 邮箱：daojin110@outlook.com
