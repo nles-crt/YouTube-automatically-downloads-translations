@@ -1,4 +1,4 @@
-#YouTube-automatically-downloads-translations
+# YouTube-automatically-downloads-translations
 
 # 视频字幕提取器
 
@@ -42,5 +42,5 @@
 
 ## 作者
 
-- 作者：李祖明
-- 邮箱：daojin110@outlook.com
+- 作者：李明
+- 邮箱：173846005@protonmail.com
